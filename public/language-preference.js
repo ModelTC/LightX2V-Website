@@ -8,8 +8,13 @@
   const english = route.startsWith('en/');
   const page = route.replace(/^en\//, '') || 'index.html';
   if (!['index.html', 'community.html', 'sparks.html'].includes(page)) return;
-  let preferred;
-  try { preferred = localStorage.getItem(key); } catch {}
+  let preferred = current.searchParams.get('lang');
+  const explicit = preferred === 'zh' || preferred === 'en';
+  if (explicit) {
+    try { localStorage.setItem(key, preferred); } catch {}
+  } else {
+    try { preferred = localStorage.getItem(key); } catch {}
+  }
   if (preferred !== 'zh' && preferred !== 'en') {
     const language = navigator.languages?.[0] || navigator.language || 'en';
     preferred = /^zh(?:-|$)/i.test(language) ? 'zh' : 'en';
@@ -20,7 +25,13 @@
     target.hash = current.hash;
     location.replace(target.href);
   }
-  // Capture the user's explicit choice before navigating, including when storage is unavailable.
+  // An explicit URL choice wins even when storage is blocked or an older page is cached.
+  const prepareLinks = () => document.querySelectorAll('.locale-switch').forEach(link => {
+    const target = new URL(link.href);
+    target.searchParams.set('lang', link.lang === 'en' ? 'en' : 'zh');
+    link.href = target.href;
+  });
+  document.addEventListener('DOMContentLoaded', prepareLinks);
   document.addEventListener('click', event => {
     const link = event.target.closest?.('.locale-switch');
     if (!link) return;
@@ -29,6 +40,7 @@
     try { localStorage.setItem(key, language); } catch {}
     target.search = current.search;
     target.hash = current.hash;
+    target.searchParams.set('lang', language);
     link.href = target.href;
   }, true);
 })();
