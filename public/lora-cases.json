@@ -1,0 +1,5 @@
+[
+ {"id":"motion","name":"人物动作","base":null,"lora":null,"baseSteps":null,"loraSteps":null,"baseSeconds":null,"loraSeconds":null},
+ {"id":"camera","name":"镜头运动","base":null,"lora":null,"baseSteps":null,"loraSteps":null,"baseSeconds":null,"loraSeconds":null},
+ {"id":"details","name":"细节表现","base":null,"lora":null,"baseSteps":null,"loraSteps":null,"baseSeconds":null,"loraSeconds":null}
+]

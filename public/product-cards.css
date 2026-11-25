@@ -1,0 +1,152 @@
+.product-gallery{--gallery-paper:#f7f9f9;width:min(1200px,88%);margin:auto;padding:90px 0 70px;background:var(--gallery-paper)}
+.gallery-heading{margin:0 0 32px;max-width:1000px}.product-gallery .gallery-heading h2{text-align:left;font:500 clamp(32px,3.8vw,56px)/1.25 "Helvetica Neue","PingFang SC",sans-serif;letter-spacing:-.045em;margin:0}.gallery-heading p{font-size:16px;line-height:1.8;color:#636363;margin:24px 0 36px;max-width:44em}.gallery-label{display:inline-block;border:1px solid #393939;border-radius:30px;padding:5px 12px;font-size:13px;color:#363636}
+.product-track{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.product-card{position:relative;display:block;height:350px;text-decoration:none;color:#313131;border-radius:30px;isolation:isolate}.card-surface{position:absolute;inset:0;background:#b4e8ed;border-radius:30px;overflow:hidden;mask:radial-gradient(circle 38px at calc(100% - 27px) calc(100% - 27px),transparent 37px,#000 38px);-webkit-mask:radial-gradient(circle 38px at calc(100% - 27px) calc(100% - 27px),transparent 37px,#000 38px)}.product-card h3{position:absolute;top:27px;left:30px;z-index:2;font:600 clamp(26px,2.5vw,36px)/1.13 "Helvetica Neue","PingFang SC",sans-serif;letter-spacing:-.04em;margin:0}.card-orb{position:absolute;width:270px;height:270px;border-radius:50%;overflow:hidden;left:55%;top:49%;transform:translate(-50%,-50%);background:#ffffff30;border:1px solid #ffffff80;display:grid;place-items:center}.card-orb img{width:66%;height:66%;object-fit:contain}.card-github .card-surface{background:#898989}.card-github{color:#fff}.card-github .card-orb{background:#39393935;border-color:#c1eff74d}.card-copy{position:absolute;bottom:25px;left:30px;right:82px;z-index:2;display:flex;justify-content:space-between;gap:18px;align-items:end}.card-copy span{font-size:14px;line-height:1.5}.card-copy b{font-size:15px;font-weight:500;white-space:nowrap}.card-entry{position:absolute;right:0;bottom:0;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:white;background:#000;font:300 28px/1 sans-serif}.product-card:focus-visible{outline:3px solid #828282;outline-offset:5px}
+@media(hover:hover) and (pointer:fine){.product-card:hover .card-entry{background:#000;box-shadow:0 0 0 3px #76dee7}.product-card:hover .card-copy b{text-decoration:underline;text-underline-offset:4px}}
+@media(max-width:900px){.product-card{height:320px}.card-orb{width:220px;height:220px}.card-copy{display:block}.card-copy b{display:block;margin-top:6px}.product-card h3{font-size:28px}}
+@media(max-width:650px){.product-gallery{width:88%;padding:52px 0}.gallery-heading p{font-size:15px;margin:20px 0 28px}.gallery-heading h2 br{display:none}.product-track{grid-template-columns:1fr;gap:24px}.product-card{height:330px}.card-orb{width:240px;height:240px}.product-card h3{top:25px;left:25px;font-size:30px}.card-copy{left:25px}.card-surface,.product-card{border-radius:28px}}
+/* Match the reference's soft stepped notch, including both shoulders. */
+.card-surface{mask-repeat:no-repeat;-webkit-mask-repeat:no-repeat;mask-size:100% 100%;-webkit-mask-size:100% 100%}
+
+.card-entry{width:50px;height:50px;background:#000;box-shadow:none}.card-entry img{display:block;width:19px;height:19px}.product-card:hover .card-entry{background:#000;box-shadow:none}
+@media(max-width:650px){
+.product-gallery{padding:64px 0;max-width:480px}.gallery-heading{margin-bottom:32px}.product-gallery .gallery-heading h2{font-size:clamp(28px,7.8vw,34px);line-height:1.35;letter-spacing:-.03em}.gallery-heading p{line-height:1.85;margin:22px 0 28px}
+.product-track{gap:28px}.product-card{height:360px}.product-card h3{top:24px;left:24px;font-size:28px;line-height:1.15;max-width:calc(100% - 48px)}
+.card-orb{width:170px;height:170px;left:50%;top:185px}.card-copy{left:24px;bottom:24px;right:72px}.card-copy span{font-size:14px;line-height:1.65}.card-copy b{margin-top:8px;font-size:14px}
+}
+
+.repo-card{height:340px;color:#313131}.repo-card h3{font-size:clamp(24px,2.3vw,32px);line-height:1.2;right:24px;overflow-wrap:anywhere}.repo-card .card-orb{width:112px;height:112px;top:174px;left:50%}.repo-card .card-orb img{width:54px;height:54px}.repo-card .card-copy{display:block;bottom:25px}.repo-card .card-copy b{display:block;margin-top:10px}.repo-1 .card-surface,.repo-4 .card-surface{background:#a9cdd3}.repo-2 .card-surface,.repo-5 .card-surface{background:#c7dfe1}.projects-more{text-align:center;margin-top:36px}.projects-more a{display:inline-flex;align-items:center;gap:22px;min-height:48px;border:1px solid #424242;border-radius:999px;padding:0 24px;text-decoration:none;color:#323232;font-size:15px}.projects-more a:focus-visible{outline:2px solid #737373;outline-offset:4px}@media(max-width:650px){.repo-card{height:350px}.repo-card h3{font-size:24px;left:24px;top:24px}.repo-card .card-orb{top:180px}.repo-card .card-copy{right:70px}.repo-card .card-copy span{font-size:13px}.projects-more{margin-top:30px}}
+/* One horizontal row; preserve readable card widths on smaller screens. */
+.product-track{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:calc((100% - 44px)/3);gap:22px;overflow-x:auto;overflow-y:hidden;padding:6px 0 12px;scroll-snap-type:x mandatory;scroll-padding-inline:0;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#87b7bf transparent}
+.product-track .repo-card{scroll-snap-align:start;min-width:0;height:350px}.repo-card h3{font-size:26px}.repo-card .card-orb{top:183px}.product-track::-webkit-scrollbar{height:5px}.product-track::-webkit-scrollbar-thumb{background:#87b7bf;border-radius:9px}
+@media(max-width:1000px){.product-track{grid-auto-columns:calc((100% - 22px)/2)}}
+@media(max-width:650px){.product-gallery{max-width:none}.product-track{grid-template-columns:none;grid-auto-columns:88%;gap:18px}.repo-card h3{font-size:23px}.product-track .repo-card{height:350px}}
+
+/* Large organic photographs, quiet editorial copy and the original soft notch. */
+.product-track{grid-auto-columns:calc((100% - 22px)/2);gap:22px}.product-track .repo-card{height:340px;color:white}.repo-card .card-surface{background:#6d6d6d}.repo-1 .card-surface{background:#636363}.repo-2 .card-surface{background:#7d7d7d}.repo-3 .card-surface{background:#626262}.repo-4 .card-surface{background:#616161}.repo-5 .card-surface{background:#828282}.repo-card h3{z-index:3;font-size:28px;line-height:1.12;max-width:90%;right:20px;letter-spacing:-.035em}.repo-card .card-orb{width:260px;height:260px;left:55%;top:50%;border:0;background:none}.repo-card .card-orb img{width:100%;height:100%;object-fit:cover}.repo-card .card-copy{left:auto;right:76px;bottom:22px;max-width:75%;text-align:right}.repo-card .card-copy span{display:none}.repo-card .card-copy b{font-size:15px;font-weight:400;margin:0}.gallery-heading p{margin-bottom:0}.gallery-heading{margin-bottom:38px}
+@media(max-width:1000px){.product-track{grid-auto-columns:75%}.repo-card h3{font-size:27px}}
+@media(max-width:650px){.product-track{grid-auto-columns:94%;gap:18px}.product-track .repo-card{height:320px}.repo-card h3{font-size:23px;top:22px;left:22px;right:20px}.repo-card .card-orb{width:214px;height:214px;left:52%;top:53%}.repo-card .card-copy{bottom:22px;right:70px}.repo-card .card-copy b{font-size:14px}}
+/* Match the monochrome film: tactile images, graphite surfaces, restrained cyan. */
+.repo-card .card-surface{background:#5f5f5f}.repo-1 .card-surface{background:#6a6a6a}.repo-2 .card-surface{background:#666666}.repo-3 .card-surface{background:#5d5d5d}.repo-4 .card-surface{background:#585858}.repo-5 .card-surface{background:#727272}
+.repo-card .card-orb img{filter:grayscale(1) contrast(1.08);transition:filter .4s ease}
+@media(hover:hover){.repo-card:hover .card-orb img{filter:grayscale(.7) saturate(.6) contrast(1.08)}}
+@media(prefers-reduced-motion:reduce){.repo-card .card-orb img{transition:none}}
+/* Square cards, one continuous horizontal row. */
+.product-track{grid-auto-columns:calc((100% - 44px)/3)}.product-track .repo-card{height:auto;aspect-ratio:1}.repo-card h3{font-size:24px}.repo-card .card-orb{width:62%;height:auto;aspect-ratio:1;left:53%;top:53%}.repo-card .card-copy{bottom:22px;right:72px}
+@media(max-width:1000px){.product-track{grid-auto-columns:calc((100% - 22px)/2)}}
+@media(max-width:650px){.product-track{grid-auto-columns:94%}.repo-card h3{font-size:clamp(19px,5.5vw,24px);left:20px;top:20px}.repo-card .card-orb{width:60%;top:55%}.repo-card .card-copy{bottom:20px;right:66px}}
+.repo-card .card-orb{left:50%;top:50%;transform:translate(-50%,-50%)}
+/* Fine print-screen texture, clipped to the centered photographs. */
+.repo-card .card-orb{isolation:isolate}
+.repo-card .card-orb:after{content:"";position:absolute;inset:0;border-radius:50%;pointer-events:none;background-image:radial-gradient(circle,#111 0.65px,transparent .95px);background-size:3px 3px;opacity:.3;mix-blend-mode:multiply;z-index:1}
+.repo-card .card-orb img{filter:grayscale(1) contrast(1.16) brightness(1.03)}
+@media(hover:hover){.repo-card:hover .card-orb img{filter:grayscale(.7) saturate(.6) contrast(1.16) brightness(1.03)}}
+/* Partial cards at the edges communicate horizontal movement without a bar. */
+.product-track{grid-auto-columns:31%;scrollbar-width:none;padding:6px 4% 12px;scroll-padding-inline:4%;mask-image:linear-gradient(90deg,transparent,#000 2%,#000 98%,transparent)}
+.product-track::-webkit-scrollbar{display:none;height:0}.repo-card .card-copy b{font-family:var(--site-text,sans-serif);font-weight:400;letter-spacing:0;font-size:15px}
+.project-carousel-controls{display:flex;justify-content:center;gap:14px;margin:20px 0 0}.project-carousel-controls button{width:44px;height:44px;border:1px solid #7a7a7a38;border-radius:50%;background:transparent;color:#414141;font-size:20px;cursor:pointer}.project-carousel-controls button:hover{background:#76dee71a}.project-carousel-controls button:focus-visible{outline:2px solid #7d7d7d;outline-offset:3px}.project-carousel-controls button:disabled{opacity:.3;cursor:default}
+@media(max-width:1000px){.product-track{grid-auto-columns:46%}}
+@media(max-width:650px){.product-track{grid-auto-columns:86%;gap:16px;padding-inline:4%;scroll-padding-inline:4%}.repo-card .card-copy b{font-size:14px}}
+/* Full-bleed card strip, with editorial content retaining its margins. */
+.product-track{position:relative;width:100vw;max-width:none;left:50%;margin-left:-50vw;box-sizing:border-box;grid-auto-columns:clamp(280px,26vw,400px);padding:6px 0 12px;scroll-padding-inline:0;mask-image:none}
+.project-carousel-controls{margin:22px auto 0;width:min(300px,65%);height:36px;align-items:center}
+.project-scroll-progress{appearance:none;-webkit-appearance:none;width:100%;height:36px;margin:0;background:transparent;cursor:pointer;touch-action:none}
+.project-scroll-progress::-webkit-slider-runnable-track{height:1px;background:#76767640}
+.project-scroll-progress::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:54px;height:3px;background:#777777;border-radius:0;margin-top:-1px}
+.project-scroll-progress::-moz-range-track{height:1px;background:#76767640}
+.project-scroll-progress::-moz-range-thumb{width:54px;height:3px;background:#777777;border:0;border-radius:0}
+.project-scroll-progress:focus-visible{outline:1px solid #76dee7;outline-offset:4px}
+@media(max-width:650px){.product-track{grid-auto-columns:82vw;gap:18px;padding-inline:0;scroll-padding-inline:0}.project-carousel-controls{height:44px;margin-top:18px}.project-scroll-progress{height:44px}}
+
+/* Clear, softly tinted glass instead of opaque graphite panels. */
+.product-track .repo-card{color:#2d2d2d}
+.product-track .repo-card .card-surface{background:linear-gradient(135deg,rgba(255,255,255,.78),rgba(219,239,240,.24) 48%,rgba(255,255,255,.42));backdrop-filter:blur(12px) saturate(115%);-webkit-backdrop-filter:blur(12px) saturate(115%);box-shadow:inset 0 1px 0 rgba(255,255,255,.95),inset 1px 0 0 rgba(255,255,255,.65),inset 0 -1px 0 rgba(87,137,144,.12)}
+.product-track .repo-card .card-surface:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 85% 10%,rgba(118,222,231,.1),transparent 62%);pointer-events:none}
+.product-track .repo-card h3{color:#2d2d2d;text-shadow:none}
+.product-track .repo-card .card-copy{color:#4c4c4c}
+.product-track .repo-card .card-orb{box-shadow:0 1px 0 rgba(255,255,255,.7)}
+@media(hover:hover){.product-track .repo-card:hover .card-surface{background:linear-gradient(135deg,rgba(255,255,255,.86),rgba(213,239,241,.35) 48%,rgba(255,255,255,.5))}}
+
+/* Neutral paper-glass cards: clearer silhouettes and more breathing room. */
+.product-gallery .gallery-heading{margin-bottom:58px}
+.product-gallery .product-track{grid-auto-columns:clamp(270px,24vw,360px);gap:32px;padding-top:8px;padding-bottom:16px}
+.product-track .repo-card .card-surface{background:linear-gradient(135deg,rgba(228,228,228,.78),rgba(237,237,237,.68) 52%,rgba(224,224,224,.62));box-shadow:inset 0 1px 0 #ffffffc0,inset 0 -1px 0 #00000008;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.product-track .repo-card .card-surface:before{background:none}
+.product-track .repo-card h3{color:#252525;font-size:22px;left:26px;top:25px;right:22px}
+.product-track .repo-card .card-copy{color:#555}.product-track .repo-card .card-orb{width:58%}
+@media(hover:hover){.product-track .repo-card:hover .card-surface{background:linear-gradient(135deg,#e5e5e5c7,#edededb3 52%,#e0e0e0a3)}}
+.project-scroll-progress::-webkit-slider-runnable-track{background:#dedede}.project-scroll-progress::-webkit-slider-thumb{background:#bdbdbd}
+.project-scroll-progress::-moz-range-track{background:#dedede}.project-scroll-progress::-moz-range-thumb{background:#bdbdbd}
+.projects-more a{background:#76dee7;border-color:#76dee7;color:#303030}.projects-more a:hover{background:#96e6ed;border-color:#96e6ed}
+.project-carousel-controls{margin-top:28px}.projects-more{margin-top:32px}
+@media(max-width:650px){.product-gallery .gallery-heading{margin-bottom:40px}.product-gallery .product-track{grid-auto-columns:78vw;gap:24px}.product-track .repo-card h3{font-size:clamp(18px,5vw,22px);left:22px;top:22px}.product-track .repo-card .card-orb{width:56%}}
+
+/* Calm, consistent project naming with a separate variant line. */
+.product-track .repo-card h3{font-family:"Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;font-size:24px;font-weight:500;line-height:1.25;letter-spacing:-.025em;left:28px;right:24px;top:25px;max-width:none;overflow-wrap:normal;color:#262626}
+.product-variant{display:block;font-size:13px;font-weight:400;line-height:1.5;letter-spacing:.015em;color:#737373;margin-top:5px}
+.product-track .repo-card .card-copy b{font-family:"Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;font-size:13px;font-weight:400;letter-spacing:.015em}
+@media(max-width:650px){.product-track .repo-card h3{left:22px;top:21px;right:20px;font-size:22px}.project-variant{font-size:11px;margin-top:4px}.product-track .repo-card .card-copy b{font-size:12px}}
+
+/* Reserve separate, non-overlapping title and image zones. */
+.product-track .repo-card h3{top:26px;left:28px;right:28px;line-height:1.3;font-size:23px}
+.product-track .repo-card h3 .project-variant{display:inline-block;font-family:inherit;font-size:12px;font-weight:400;line-height:1.5;letter-spacing:.02em;color:#737373;margin-top:6px;white-space:nowrap}
+.product-track .repo-card .card-orb{width:51%;top:54%}
+@media(max-width:650px){.product-track .repo-card h3{top:22px;left:22px;right:22px;font-size:21px}.product-track .repo-card h3 .project-variant{font-size:11px;margin-top:5px}.product-track .repo-card .card-orb{width:48%;top:55%}}
+/* Lift the whole cut-out silhouette; reserve room so shadows are not clipped. */
+.product-gallery .product-track{padding-top:20px;padding-bottom:38px}
+.product-track .repo-card{transition:transform 240ms cubic-bezier(.22,1,.36,1),filter 240ms ease;filter:drop-shadow(0 0 0 transparent)}
+@media(hover:hover) and (pointer:fine){
+.product-track .repo-card:hover{transform:translateY(-5px);filter:drop-shadow(0 12px 12px rgba(0,0,0,.10)) drop-shadow(0 3px 3px rgba(0,0,0,.04))}
+.product-track .repo-card:active{transform:translateY(-1px);filter:drop-shadow(0 4px 5px rgba(0,0,0,.08))}
+.product-track .repo-card:hover .card-copy b{text-decoration:none}
+.product-track .repo-card:hover .card-surface{background:linear-gradient(135deg,rgba(228,228,228,.78),rgba(237,237,237,.68) 52%,rgba(224,224,224,.62))}
+}
+@media(prefers-reduced-motion:reduce){.product-track .repo-card{transition:none}.product-track .repo-card:hover,.product-track .repo-card:active{transform:none}}
+.product-track .repo-card{transform-origin:50% 50%;transition:transform 200ms cubic-bezier(.22,1,.36,1),filter 200ms ease}
+@media(hover:hover) and (pointer:fine){.product-track .repo-card:hover,.product-track .repo-card:active{transform:none}}
+
+.project-carousel-controls[hidden]{display:none!important}
+.product-gallery .product-track{scroll-snap-type:none;scroll-behavior:auto}
+
+/* Center the intrinsic card row when it fits; retain its start edge when overflowing. */
+.product-gallery .product-track{justify-content:safe center}
+
+/* Compact image-led repository cards; muted imagery protects overlaid titles. */
+.product-gallery .gallery-heading{margin-bottom:30px}
+.product-gallery .product-track{grid-auto-columns:clamp(260px,20vw,310px);gap:18px;padding-top:12px;padding-bottom:22px}
+.product-gallery .product-track .repo-card{aspect-ratio:1.32;height:auto;min-height:220px}
+.product-track .repo-card .card-orb{width:68%;top:50%;left:61%;opacity:.28;box-shadow:none;transition:opacity 180ms ease-out}
+.product-track .repo-card .card-orb img{filter:grayscale(1) contrast(.88);width:100%;height:100%;object-fit:cover}
+.product-track .repo-card .card-orb:after{opacity:.08}
+.product-track .repo-card h3{left:22px;top:22px;right:24px;max-width:calc(100% - 46px);font-size:25px;font-weight:750;line-height:1.12;letter-spacing:-.035em;color:#292929;text-shadow:0 1px 12px #f4f7f7e6;overflow-wrap:normal}
+.product-track .repo-card h3 .project-variant{font-weight:650;color:#4d4d4d;font-size:12px}
+.product-track .repo-card .card-copy{bottom:19px;right:66px;color:#404040}
+.product-track .repo-card .card-copy b{font-size:12px;font-weight:600;letter-spacing:0}
+.project-carousel-controls{margin-top:10px}.projects-more{margin-top:20px}
+@media(hover:hover) and (pointer:fine){.product-track .repo-card:hover .card-orb{opacity:.36}.product-track .repo-card:hover .card-orb img{filter:grayscale(1) contrast(.88)}}
+@media(max-width:650px){.product-gallery .gallery-heading{margin-bottom:24px}.product-gallery .product-track{grid-auto-columns:min(76vw,290px);gap:14px}.product-gallery .product-track .repo-card{aspect-ratio:1.3;min-height:205px}.product-track .repo-card h3{font-size:23px;left:20px;top:20px;right:22px}.product-track .repo-card .card-orb{width:68%;left:61%;top:50%}}
+@media(prefers-reduced-motion:reduce){.product-track .repo-card .card-orb{transition:none}}
+
+/* Center the photograph and keep CTA typography neutral. */
+.product-gallery .product-track .repo-card .card-orb{left:50%;top:50%;transform:translate(-50%,-50%)}
+.product-gallery .product-track .repo-card .card-copy,.product-gallery .product-track .repo-card .card-copy b{color:#202426}
+
+.product-gallery .product-track .repo-card h3{font-family:"Avenir Next",Avenir,"Helvetica Neue",Arial,sans-serif;font-weight:500;color:#505050;font-size:23px;line-height:1.2;letter-spacing:-.025em;text-shadow:none}
+.product-gallery .product-track .repo-card h3 .project-variant{font-weight:400;color:#6f6f6f}
+.product-gallery .product-track .repo-card .card-copy b{font-weight:400;color:#616161}
+
+.product-gallery .product-track .repo-card .card-orb{width:58%;left:50%;top:50%;transform:translate(-50%,-50%)}
+
+/* Explicit card bounds prevent aspect-ratio/min-height expansion into adjacent columns. */
+.product-gallery .product-track{grid-auto-columns:clamp(260px,20vw,310px);column-gap:24px;align-items:start}
+.product-gallery .product-track .repo-card{box-sizing:border-box;width:100%;max-width:100%;min-width:0;min-height:0;height:auto;aspect-ratio:1.32}
+@media(max-width:650px){.product-gallery .product-track{grid-auto-columns:min(76vw,290px);column-gap:20px}.product-gallery .product-track .repo-card{min-height:0;aspect-ratio:1.3}}
+
+/* Put captions below the circular image, with predictable title breaks. */
+.product-gallery .product-track .repo-card .card-copy{bottom:8px;right:66px;line-height:1.2}
+.product-gallery .product-track .repo-card .card-copy b{font-size:12px;line-height:1.2;margin:0;white-space:nowrap}
+.product-gallery .product-track .repo-card .card-orb{width:54%;top:48%}
+.product-gallery .product-track .repo-card h3{font-size:22px;line-height:1.2;white-space:normal}
+@media(max-width:650px){.product-gallery .product-track .repo-card h3{font-size:20px}.product-gallery .product-track .repo-card .card-copy{bottom:8px}}
+
+/* Keep the caption clear of the entry-button notch. */
+.product-gallery .product-track .repo-card .card-copy{right:86px}

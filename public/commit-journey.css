@@ -1,0 +1,15 @@
+.in-journey #sky{background:radial-gradient(ellipse at 50% 48%,#161616 0%,#030709 65%,#010203 100%)}
+.in-journey .label,.in-journey .region-year,.in-journey .commit-tip,.in-journey .zoom-rail,.in-journey #rotate-view,.in-journey #search{display:none!important}
+.journey-caption{position:absolute;top:35%;left:7%;pointer-events:none;color:#eaf9fa;text-shadow:0 2px 22px #000;max-width:300px}
+.journey-caption span{font:13px/1.6 ui-monospace,monospace;letter-spacing:.12em;color:#76dee7}
+.journey-caption h2{font:300 clamp(56px,7vw,104px)/1.1 system-ui;margin:10px 0 16px;letter-spacing:-.05em;font-variant-numeric:tabular-nums}
+.journey-caption p{font-size:14px;line-height:1.8;color:#a5b7bd;max-width:16em}
+.journey-milestone{position:absolute;left:50%;bottom:21%;transform:translateX(-50%);max-width:80%;padding:12px 0;border:0;border-bottom:1px solid #76dee780;border-radius:0;background:transparent;color:#dcf9fa;text-shadow:0 2px 15px #000;font-size:16px}
+.journey-milestone:hover{text-decoration:underline;text-underline-offset:6px}
+#journey-mode{color:#76dee7;white-space:nowrap}
+#play{min-width:92px;white-space:nowrap;color:#bcf5f7}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #76dee7;outline-offset:3px}
+.in-journey #detail{max-height:50svh;overflow:auto;border-radius:16px;border:1px solid #ffffff20;background:#ffffff09;backdrop-filter:blur(14px)}
+@media(max-width:700px){.journey-caption{top:29%;left:6%;max-width:190px}.journey-caption h2{font-size:60px}.journey-caption p{font-size:12px;max-width:13em}.journey-milestone{bottom:22%;font-size:14px;width:80%}.in-journey header p{max-width:25em}.in-journey #detail{bottom:118px;max-height:45svh}#play{min-width:76px;padding-left:0;padding-right:6px}.time{flex-wrap:wrap}.year-track{min-width:130px}#count{font-size:10px}}
+
+.in-journey #reset,.in-journey #sound{display:none}

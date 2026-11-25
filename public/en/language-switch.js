@@ -1,0 +1,1 @@
+document.querySelectorAll('.locale-switch').forEach(a=>{const host=document.querySelector('.topnav')||document.querySelector('.actions');if(host)host.append(a);a.addEventListener('click',()=>{if(location.hash)a.href=a.href.split('#')[0]+location.hash})});

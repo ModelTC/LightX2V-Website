@@ -1,0 +1,1 @@
+document.querySelectorAll('.eco-track button').forEach(button=>{button.addEventListener('click',()=>{const selected=button.getAttribute('aria-pressed')!=='true';const label=button.textContent.trim();document.querySelectorAll('.eco-track button').forEach(item=>{if(item.textContent.trim()===label)item.setAttribute('aria-pressed',String(selected))})})});

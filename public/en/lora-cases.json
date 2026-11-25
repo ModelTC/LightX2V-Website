@@ -1,0 +1,5 @@
+[
+ {"id":"motion","name":"Motion","base":null,"lora":null,"baseSteps":null,"loraSteps":null,"baseSeconds":null,"loraSeconds":null},
+ {"id":"camera","name":"Camera","base":null,"lora":null,"baseSteps":null,"loraSteps":null,"baseSeconds":null,"loraSeconds":null},
+ {"id":"details","name":"Detail","base":null,"lora":null,"baseSteps":null,"loraSteps":null,"baseSeconds":null,"loraSeconds":null}
+]

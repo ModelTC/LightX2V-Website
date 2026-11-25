@@ -1,0 +1,110 @@
+/* The film, brief and controls form one spread. */
+.release {
+  --paper: #eef0ef;
+  --ink: #161b1c;
+  --mint: #abe7e8;
+  color: var(--ink);
+  background: var(--paper);
+  padding: clamp(14px, 2vw, 34px) clamp(14px, 3.2vw, 72px) clamp(14px, 1.8vw, 30px);
+  text-align: left;
+}
+.release-grid, .release-end {
+  max-width: 1800px;
+  margin: 0 auto;
+}
+.release-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 3.7fr) minmax(215px, 1fr);
+  gap: clamp(10px, 1.1vw, 20px);
+  align-items: stretch;
+}
+.release-frame {
+  width: 100%; max-width: none;
+  margin: 0; border-radius: 5px;
+  overflow: hidden; background: #121818;
+}
+.release-frame video { height: clamp(370px, 61vh, 690px); width: 100%; object-fit: cover; }
+.feature-titles {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(22px, 3.6vw, 74px);
+  background: linear-gradient(0deg, rgba(8,14,13,.84), rgba(8,14,13,.40) 36%, transparent 73%);
+  transition: opacity .24s ease;
+  color: #fff;
+}
+.feature-titles p { margin: 0 0 14px; font: 500 clamp(13px,1.1vw,18px)/1.5 "Helvetica Neue","PingFang SC",sans-serif; color:#edf4f1; }
+.feature-titles h1 { margin: 0; color: #fff; font: 520 clamp(38px,4.55vw,82px)/1.13 "Helvetica Neue","PingFang SC","Microsoft YaHei",sans-serif; letter-spacing: -.055em; }
+.footage:is(.playing,.inspect) .feature-titles { opacity: 0; }
+.release-frame .frame-cursor, .release-frame .film-position { z-index: 2; }
+.release-frame figcaption { padding: 10px 16px; min-height: 52px; background: #161c1b; color: #d9e2dd; }
+.release-frame .takes { gap: 3px; }
+.release-frame button { background: transparent; color: #d9e2dd; border-radius: 4px; font: 500 12px/1.3 "Helvetica Neue","PingFang SC",sans-serif; }
+.release-frame .takes button[aria-pressed="true"] { background: #3f3f3f; color: #fff; }
+.release-frame #play:hover, .release-frame button:focus-visible { background: #4d4d4d; }
+.release-note {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: clamp(18px,2.1vw,40px); background: #dadfdb; border-radius: 5px;
+}
+.release-summary h2 { margin: 0 0 17px; color: var(--ink); font: 550 clamp(26px,2.6vw,50px)/1.02 "Helvetica Neue",Arial,sans-serif; letter-spacing: -.065em; }
+.release-summary p, .release-spec p { margin: 0; color: #404843; font: 400 clamp(13px,1vw,17px)/1.75 "Helvetica Neue","PingFang SC",sans-serif; }
+.release-spec { margin: auto 0 clamp(15px,2.3vw,37px); padding-top: 32px; }
+.release-spec strong { display: block; margin: 2px 0; font: 400 clamp(51px,5.5vw,95px)/.94 "Helvetica Neue",Arial,sans-serif; letter-spacing: -.08em; }
+.release-spec strong span { padding: 0 .08em; color: #727272; font-weight: 250; }
+.release-spec p:last-child { font-size: 12px; }
+.release-weight { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 14px; padding: 13px 16px; color: #212121; background: var(--mint); border-radius: 4px; text-decoration: none; font: 550 14px/1.2 "Helvetica Neue","PingFang SC",sans-serif; }
+.release-weight span { font-size: 20px; }
+.release-weight:hover { background: #98dde0; }
+.release-end { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; padding: 13px 0 0; }
+.release-end p, .release-end a { margin: 0; font: 400 12px/1.65 "Helvetica Neue","PingFang SC",sans-serif; color: #515954; }
+.release-end b { font-weight: 600; color: #242a27; }
+.release-end a { flex: none; color: var(--ink); text-underline-offset: 4px; }
+@media(max-width: 780px){
+  .release-grid { grid-template-columns: 1fr; }
+  .release-frame video { height: clamp(260px,55vw,385px); }
+  .feature-titles h1 { font-size: clamp(31px,6.6vw,50px); }
+  .feature-titles p { margin-bottom: 9px; }
+  .release-note { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 13px 16px; }
+  .release-summary h2 { margin: 0 0 5px; font-size: 26px; }
+  .release-summary h2 br { display:none; }
+  .release-summary h2 br:after { content:' '; }
+  .release-spec { margin: 0; padding: 0; }
+  .release-spec strong { font-size: 38px; }
+  .release-weight { width: fit-content; font-size: 13px; padding: 9px 12px; }
+  .release-end { align-items: start; gap: 12px; }
+}
+@media(max-width: 470px){
+  .release-frame figcaption { min-height: 46px; padding: 6px; gap: 4px; }
+  .release-frame button { padding: 7px 6px; font-size: 11px; }
+  .release-frame #time { font-size: 10px; }
+  .release-end { display: block; }
+  .release-end a { display: inline-block; margin-top: 6px; }
+}
+@media(prefers-reduced-motion: reduce){.feature-titles{transition:none}}
+
+/* Shared editorial margins keep long lists, the introduction and figures aligned. */
+main > .spread, main > .about {
+  width: min(1200px, 88%);
+  margin-inline: auto;
+  padding: clamp(54px, 6vw, 98px) 0;
+  grid-template-columns: minmax(180px, .72fr) minmax(0, 1.8fr);
+  column-gap: 6%;
+}
+.spread h2, .about h2 {font: 550 clamp(25px, 2.45vw, 39px)/1.22 "Helvetica Neue","PingFang SC",sans-serif;letter-spacing:-.04em;}
+.spread .row {padding: 22px 0;border-top:1px solid #dee1df;}
+#research .row {display:grid;grid-template-columns:minmax(135px,.72fr) minmax(0,1.28fr);align-items:baseline;gap:18px;}
+#research .row h3 {margin:0;font:550 clamp(16px,1.35vw,21px)/1.4 "Helvetica Neue","PingFang SC",sans-serif;}
+#research .row p {margin:0;font-size:14px;line-height:1.65;}
+.about img {width:min(65%,205px);}
+.about p {max-width:40em;font-size:clamp(16px,1.33vw,20px);line-height:1.75;}
+.about .stats {grid-column:1 / -1;gap:8px;margin:32px 0 0;}
+.about .stats a {display:flex;flex-direction:column;justify-content:space-between;min-height:134px;padding:20px;background:#f2f4f2;border-radius:5px;}
+.about .stats b {font:500 clamp(32px,3.6vw,52px)/1.08 "Helvetica Neue","PingFang SC",sans-serif;letter-spacing:-.055em;}
+.about .stats a:is(:hover,:focus-visible) {background:#d2eded;}
+.about > small {grid-column:1 / -1;margin-top:12px;}
+@media(max-width:760px){
+  main > .spread,main > .about {grid-template-columns:1fr;row-gap:20px;}
+  .about .stats {margin:0;}
+  .about > small {margin:0;}
+  .about .stats a {min-height:99px;padding:15px;}
+  #research .row {grid-template-columns:1fr;gap:5px;padding:16px 0;}
+}

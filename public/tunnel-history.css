@@ -1,0 +1,91 @@
+#sky{background:radial-gradient(ellipse at 50% 50%,#1f1f1f,#03060c 72%)}
+.tunnel-layer-label{position:absolute;transform:translate(-50%,-50%);padding:4px 8px;background:#03060c66;border:0;border-radius:5px;color:#d2dee5;font:12px ui-monospace,monospace;text-shadow:0 1px 8px #000}
+.tunnel-legend{position:absolute;left:4%;top:150px;display:flex;gap:12px;flex-wrap:wrap;max-width:650px}
+.tunnel-legend button{font:12px system-ui;background:#050b1166;border:0;border-radius:20px;color:#d4e0e6;padding:7px 10px;display:flex;align-items:center;gap:7px}
+.tunnel-legend button:before{content:'';width:7px;height:7px;border-radius:2px;background:var(--project-color)}
+.tunnel-note{position:absolute;left:4%;bottom:160px;pointer-events:none;text-shadow:0 2px 14px #000;max-width:340px}.tunnel-note span{font-size:13px;color:#b6c9d4}.tunnel-note strong{display:block;font-size:24px;line-height:1.6;font-weight:450;margin-top:10px}
+.tunnel-live{position:absolute;left:4%;bottom:150px;max-width:min(500px,90vw);background:#1a1a1a99;border:1px solid #ffffff20;border-radius:12px;color:#dfebf0;font-size:14px;line-height:1.6;text-align:left;padding:14px 18px}
+body:has(#detail:not(:empty)) .tunnel-live{display:none}
+@media(max-width:700px){.tunnel-legend{top:208px;left:5%;max-width:86%;gap:4px}.tunnel-legend button{font-size:10px;padding:5px 7px}.tunnel-note{bottom:175px;max-width:260px}.tunnel-note strong{font-size:20px}.tunnel-note span{font-size:11px}.tunnel-live{bottom:165px;font-size:12px}.tunnel-layer-label{font-size:10px}}
+/* Keep controls readable against nearby commit pillars. */
+.actions{background:rgba(8,15,23,.72)!important;backdrop-filter:blur(16px)}
+.tunnel-layer-label{pointer-events:auto}
+@media(max-width:700px){header{background:linear-gradient(#05090fe8,transparent);padding-bottom:16px}.tunnel-legend{max-width:330px}.tunnel-note{text-shadow:0 2px 10px #000}}
+
+#detail{left:auto;right:clamp(66px,6vw,108px);top:150px;bottom:auto;width:min(360px,32vw);max-height:calc(100svh - 290px);overflow:auto;background:linear-gradient(125deg,#21212152,#13131326);border:1px solid #e6f7ff24;border-radius:18px;backdrop-filter:blur(12px);box-shadow:0 12px 40px #0002;padding:22px}
+#detail p{font-size:14px;line-height:1.7}#detail a{font-size:14px;color:#a7edf1}#detail button{background:#ffffff0a;border-radius:50%}
+.author-results{z-index:20;background:#1a1a1adf;backdrop-filter:blur(18px)}
+@media(max-width:700px){#detail{right:5%;top:auto;bottom:155px;width:90%;max-width:none;max-height:40svh;padding:18px}.actions{position:relative;z-index:5}}
+
+.actions .author-results{width:min(400px,90vw);max-height:46svh;background:linear-gradient(125deg,rgba(16,27,35,.23),rgba(9,18,25,.12));backdrop-filter:blur(9px);border:1px solid #dce8ef24;box-shadow:0 14px 38px #0002;padding:10px;scrollbar-width:thin;scrollbar-color:#bdc8ce66 transparent;overscroll-behavior:contain}
+.author-results::-webkit-scrollbar,#detail::-webkit-scrollbar{width:4px}
+.author-results::-webkit-scrollbar-track,#detail::-webkit-scrollbar-track{background:transparent}
+.author-results::-webkit-scrollbar-thumb,#detail::-webkit-scrollbar-thumb{background:#bdc8ce66;border-radius:4px}
+.actions .author-results button{background:transparent;font-weight:400;padding:12px;line-height:1.65;text-shadow:0 1px 5px #0008}
+.actions .author-results button:hover{background:#ffffff0b}
+#detail{scrollbar-width:thin;scrollbar-color:#bdc8ce66 transparent}
+#detail .contribution-stat{font-size:18px;color:#b4edf0;margin:16px 0 8px}
+#detail .developer-profile{display:block;margin:12px 0 0;font-size:14px}
+#detail .developer-profile[aria-disabled=true]{font-size:12px;color:#a3afb4;text-decoration:none;cursor:default}
+@media(max-width:700px){.actions .author-results{max-height:40svh}}
+
+/* A quieter instrument strip and a focused reading state. */
+.actions{gap:4px;padding:5px 6px;border:1px solid #d9e6ed16;border-radius:14px;background:rgba(8,15,23,.36)!important;backdrop-filter:blur(12px);box-shadow:0 5px 24px #00000010}
+.actions>button,.actions>#project-select{padding:7px 11px;border-radius:7px;white-space:nowrap}
+.actions>.search-wrap{border-left:1px solid #d9e6ed20;margin-left:4px;padding-left:8px}
+.actions #search{background:#ffffff05;width:166px;font-size:12px;border-radius:7px}
+.actions>button:hover{background:#ffffff09;color:#f0fcff}
+.actions .locale-switch{margin-left:5px}
+#detail{border-color:color-mix(in srgb,var(--commit-color,#76dee7) 28%,transparent);box-shadow:inset 2px 0 0 color-mix(in srgb,var(--commit-color,#76dee7) 70%,transparent),0 12px 40px #0002}
+#detail .contribution-stat,#detail a{color:var(--commit-color,#b4edf0)}
+#play{min-width:136px;min-height:40px;padding:10px 18px;font-size:13px}
+#date{font-size:16px;font-weight:600;color:#eff8f8;letter-spacing:.02em;white-space:nowrap}
+#year-ticks{color:#86969e;font-size:9px}
+#timeline::-webkit-slider-runnable-track{background:#b4c7d04d}
+#timeline::-moz-range-track{background:#b4c7d04d}
+#timeline::-webkit-slider-thumb{background:#dcebed;width:8px;height:8px;margin-top:-3.5px}
+#timeline::-moz-range-thumb{background:#dcebed;width:8px;height:8px}
+#count{color:#8b9da6;font-size:11px;letter-spacing:.02em}
+.timeline-tip{position:absolute;bottom:43px;transform:translateX(-50%);padding:5px 9px;border:1px solid #d5e9ed25;border-radius:7px;background:#131313e6;backdrop-filter:blur(8px);font:12px ui-monospace,monospace;color:#e2f6f7;pointer-events:none;white-space:nowrap}
+.timeline-tip[hidden]{display:none}
+@media(max-width:1100px) and (min-width:701px){header{flex-wrap:wrap}.actions{margin-left:auto}.tunnel-legend{top:170px;max-width:55vw}}
+@media(max-width:700px){.actions{gap:2px}.actions>button,.actions>#project-select{padding:6px}.actions #search{width:128px}.actions>.search-wrap{padding-left:4px;margin-left:0}#play{margin-left:auto;min-width:128px;min-height:40px}.tunnel-legend{top:220px}#date{font-size:14px}}
+
+/* Homepage glass and capsule language, adapted to the dark observatory. */
+.actions{padding:6px 8px;gap:5px;border-radius:32px;background:linear-gradient(135deg,#ffffff14,#ffffff04 48%,#b3f4f70c)!important;border:1px solid #ffffff30;backdrop-filter:blur(10px) saturate(150%);-webkit-backdrop-filter:blur(10px) saturate(150%);box-shadow:inset 0 1px 0 #ffffff25,0 4px 18px #00000012}
+.actions>button,.actions>#project-select{min-height:36px;border-radius:999px;padding:8px 12px;font-weight:500;color:#deedef;transition:background .2s,color .2s}
+.actions>button:hover,.actions>button[aria-pressed=true]{background:#76dee71c;color:#baf5fa}
+.actions #search{border-radius:999px;background:#ffffff08;border:1px solid #ffffff12;padding:9px 13px;color:#edf8f8}
+.actions .locale-switch{border:1px solid #76dee780!important;border-radius:999px!important;background:#ffffff08!important;color:#c7f5f7!important}
+.actions select option{background:#1b1b1b;color:#edf8f8}
+.actions :focus-visible,#play:focus-visible{outline:2px solid #76dee7;outline-offset:3px}
+#play{border:1px solid #76dee7;border-radius:999px;box-shadow:inset 0 1px 0 #ffffff45}
+.zoom-rail{border-radius:999px;background:linear-gradient(135deg,#ffffff12,#ffffff04);border-color:#ffffff30;backdrop-filter:blur(10px)}
+@media(max-width:700px){.actions{border-radius:24px;padding:5px;gap:2px}.actions>button,.actions>#project-select{padding:7px 9px}.actions #search{width:128px;box-sizing:border-box}}
+@media(prefers-reduced-motion:reduce){.actions>button{transition:none}}
+
+header>div:first-child>a{display:inline-flex;align-items:center;min-height:34px;padding:5px 13px;border:1px solid #b9e7eb50;border-radius:999px;background:#dffaff08;text-decoration:none;color:#d8ebee;font-size:12px;backdrop-filter:blur(8px)}
+header>div:first-child>h1{font-weight:500;letter-spacing:-.035em;margin:14px 0 8px;font-size:30px}header #context{max-width:360px;font-size:12px;line-height:1.7;color:#9db3bd}
+.tunnel-live{left:4vw;bottom:110px;max-width:min(360px,80vw);padding:17px 20px;border:1px solid #d2eff220;border-radius:20px;background:#13131380;backdrop-filter:blur(12px);text-align:left;display:grid;gap:10px;box-shadow:inset 0 1px 0 #ffffff0c}
+.tunnel-live[hidden]{display:none}.tunnel-live strong{font:500 13px/1.5 sans-serif;color:#9be2e8;letter-spacing:.05em}.tunnel-live button{display:block;text-align:left;background:none;border:0;padding:0;color:#e1ebed;font:400 12px/1.6 sans-serif;cursor:pointer}.tunnel-live button:hover{color:#76dee7}.tunnel-live span{color:#b8c9cd;font-size:12px}
+#date{font-size:22px;letter-spacing:.02em}#count{font-size:12px;color:#bbced3}
+@media(max-width:700px){header>div:first-child>h1{font-size:25px;margin:9px 0 4px}header #context{max-width:260px;margin-bottom:8px}.tunnel-live{bottom:145px;padding:12px 16px;max-width:70vw}.tunnel-live button{font-size:11px}.tunnel-legend{top:240px}}
+
+/* Shared glass surface for annual summaries and commit details. */
+header{align-items:flex-start}header>div:first-child>a{height:50px;min-height:50px;box-sizing:border-box;padding:0 17px;display:inline-flex;align-items:center}
+#detail,.tunnel-live{box-sizing:border-box;border:1px solid #b3c5db40;border-radius:20px;background:linear-gradient(135deg,#22222266,#0c0c0c80)!important;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 40px #0002;padding:22px}
+.tunnel-live{width:360px;max-width:calc(100vw - 8vw);gap:14px;bottom:105px}.tunnel-live>strong{font-size:18px;color:#e1f0f2;letter-spacing:0;font-weight:500}
+.annual-metrics{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding-bottom:16px;border-bottom:1px solid #d4e9ef20}.annual-metrics b{display:block;font:600 27px/1.2 Georgia,serif;color:#e3f2f4}.annual-metrics span{display:block;margin-top:6px;font-size:12px;color:#afc0c8}.tunnel-live .annual-caption{color:#91b0bb;font-size:11px}.tunnel-live button{font-size:12px;line-height:1.65}#count{display:none}
+@media(max-width:700px){header>div:first-child>a{height:40px;min-height:40px}.tunnel-live{width:300px;bottom:132px;padding:16px;gap:10px;max-height:32svh;overflow:auto;scrollbar-width:thin}.annual-metrics{padding-bottom:10px}.annual-metrics b{font-size:23px}}
+
+/* Keep the introduction and project legend in one responsive flow. */
+header>div:first-child>h1{margin-top:22px;margin-bottom:16px;line-height:1.35}
+header #context{line-height:1.9;margin:0;max-width:440px}
+header .tunnel-legend{position:static;margin-top:20px;max-width:650px;gap:12px 16px}
+header .tunnel-legend button{line-height:1.7;padding:6px 10px}
+.tunnel-invitation{position:absolute;z-index:3;left:50%;top:48%;transform:translate(-50%,-50%);text-align:center;width:min(600px,80vw);padding:36px 20px;background:radial-gradient(ellipse,#0f0f0fbd,transparent 72%);animation:invitation-in 1.6s ease-out both}
+.tunnel-invitation[hidden]{display:none}.tunnel-invitation h2{font:500 clamp(28px,4vw,48px)/1.5 sans-serif;letter-spacing:.04em;color:#edf6f7;margin:0 0 18px}.tunnel-invitation p{font-size:14px;line-height:1.8;color:#b1c5cc;margin:0 0 28px}.tunnel-invitation a{display:inline-flex;padding:11px 22px;border:1px solid #8ed7df70;border-radius:999px;background:#141414bb;text-decoration:none;font-size:13px;color:#c1eff2}.tunnel-invitation a:hover{background:#2c2c2c}
+@keyframes invitation-in{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@media(prefers-reduced-motion:reduce){.tunnel-invitation{animation:none}}
+@media(max-width:1100px){header .tunnel-legend{max-width:52vw}}
+@media(max-width:700px){header>div:first-child>h1{margin:16px 0 12px}header #context{line-height:1.8}header .tunnel-legend{margin-top:14px;max-width:86vw;gap:8px 10px}header .tunnel-legend button{padding:4px 6px}.tunnel-invitation{top:48%;padding:18px 10px}.tunnel-invitation h2{font-size:28px}.tunnel-invitation p{font-size:12px}}

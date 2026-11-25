@@ -1,0 +1,9 @@
+main>section[id]{scroll-margin-top:120px}
+.scan-section{position:relative}
+.section-scan{position:absolute;top:26px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#76dee7 18%,#76dee7 80%,transparent);opacity:0;transform-origin:left;pointer-events:none}
+.nav-arrival{position:relative}
+.nav-arrival::after{content:'';position:absolute;left:0;bottom:-9px;width:56px;height:2px;background:#76dee7;transform-origin:left;pointer-events:none;animation:arrival-line 1s ease-out both}
+.eco-title.nav-arrival::after,#community-heading.nav-arrival::after,#research-title.nav-arrival::after{left:calc(50% - 28px)}
+@keyframes arrival-line{0%{opacity:0;transform:scaleX(0)}25%,65%{opacity:1;transform:scaleX(1)}100%{opacity:0;transform:scaleX(1)}}
+@media(max-width:700px){main>section[id]{scroll-margin-top:100px}.section-scan{display:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.nav-arrival::after{animation:none}.section-scan{display:none}}

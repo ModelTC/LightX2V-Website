@@ -1,0 +1,38 @@
+.studio-trial{position:relative;isolation:isolate;overflow:hidden;box-sizing:border-box;width:min(1440px,92%);min-height:480px;margin:60px auto 88px;padding:72px clamp(32px,5vw,80px);border-radius:30px;background:linear-gradient(125deg,#d3eeee 0%,#b6e5e7 52%,#86cfd5 100%);border:1px solid #ffffffa0;box-shadow:inset 0 1px 0 #ffffffb0;scroll-margin-top:112px}.studio-card-copy{position:relative;z-index:2;width:58%}.studio-eyebrow{display:block;font-size:14px;letter-spacing:.06em;color:#606060;margin-bottom:24px}.studio-trial h2{font:500 clamp(32px,3.3vw,48px)/1.3 var(--site-text,sans-serif);letter-spacing:-.035em;margin:0;color:#303030}.studio-trial p{font-size:17px;line-height:1.8;margin:26px 0 32px;color:#636363}.studio-start{display:inline-flex;align-items:center;gap:40px;min-height:54px;padding:0 28px;border-radius:999px;background:#181818;color:#fff;text-decoration:none;font-size:16px;border:1px solid #181818}.studio-start:hover{color:#a8edf1}.studio-start:focus-visible{outline:2px solid #7e7e7e;outline-offset:5px}.studio-ip{position:absolute;width:48%;aspect-ratio:1;right:-1%;bottom:-17%;overflow:hidden;pointer-events:none;filter:drop-shadow(-7px -6px 9px #c3ffff65)}.studio-ip img{display:block;position:absolute;left:0;top:0;width:300%;max-width:none;height:100%;filter:brightness(.22) saturate(.7);object-fit:fill}.studio-trial:before{content:"";position:absolute;width:60%;aspect-ratio:1;border:1px solid #ffffff30;border-radius:50%;right:-5%;top:12%;pointer-events:none}@media(max-width:760px){.studio-trial{width:88%;min-height:620px;padding:36px 26px;margin:32px auto 56px;border-radius:26px}.studio-card-copy{width:100%}.studio-trial h2{font-size:32px}.studio-eyebrow{font-size:12px;margin-bottom:18px}.studio-trial p{font-size:15px;margin:20px 0 24px}.studio-start{min-height:48px;padding:0 23px;font-size:15px}.studio-ip{width:78%;right:-9%;bottom:-12%}.studio-trial:before{width:100%;top:48%;right:-15%}}@media(max-width:380px){.studio-trial{min-height:590px;padding:32px 22px}.studio-trial h2{font-size:28px}.studio-ip{width:90%;bottom:-9%}}
+/* Two brand characters, staged at different depths. */
+.studio-trial .studio-start{background:rgba(255,255,255,.3);border:1px solid rgba(255,255,255,.85);color:#353535;box-shadow:inset 0 1px 0 #ffffff80;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);gap:24px;padding:0 10px 0 24px;min-height:52px}
+.studio-start span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#ffffff65;font-size:20px}
+.studio-trial .studio-start:hover{background:#ffffff80;color:#272727}
+.studio-trial .studio-ip{width:29%;right:23%;bottom:-3%;z-index:1}.studio-trial .studio-ip img{filter:brightness(.38) saturate(.65)}
+.studio-girl{position:absolute;width:38%;height:98%;right:-1%;bottom:-9%;object-fit:contain;object-position:center bottom;filter:brightness(.34) saturate(.65) drop-shadow(-3px -2px 3px #bbffff60);pointer-events:none;z-index:1}
+.studio-card-copy{width:52%}
+@media(max-width:760px){.studio-trial{min-height:650px}.studio-card-copy{width:100%}.studio-trial .studio-ip{width:48%;right:42%;bottom:1%}.studio-girl{width:67%;height:48%;right:-7%;bottom:-4%}}
+
+/* Dark silhouettes, a smaller companion and the supplied Studio wordmark. */
+.studio-trial .studio-ip{width:17%;right:29%;bottom:2%;filter:none}
+.studio-trial .studio-ip img{filter:brightness(.075) saturate(0)}
+.studio-trial .studio-girl{filter:brightness(.085) saturate(0) drop-shadow(-2px -1px 2px #b7f5f540)}
+.studio-watermark{position:absolute;right:8%;top:6%;width:34%;height:auto;opacity:.12;mix-blend-mode:multiply;pointer-events:none;z-index:0;filter:grayscale(1)}
+@media(max-width:760px){.studio-trial .studio-ip{width:30%;right:55%;bottom:3%}.studio-watermark{width:63%;right:19%;top:53%}}
+
+/* One composed illustration group, anchored to the card's lower edge. */
+.studio-trial{min-height:520px;padding-top:94px;padding-bottom:82px}
+.studio-trial:before{display:none}
+.studio-card-copy{width:49%;z-index:4}
+.studio-trial .studio-watermark{width:49%;right:19%;top:auto;bottom:-14%;opacity:.075;z-index:0;transform:rotate(-8deg)}
+.studio-trial .studio-girl{width:40%;height:105%;right:-3%;bottom:-20%;z-index:2;object-position:center bottom;filter:brightness(.065) saturate(0) drop-shadow(-2px -2px 3px #c5ffff40)}
+.studio-trial .studio-ip{width:18%;right:23%;bottom:-4%;z-index:3;filter:drop-shadow(-2px -2px 3px #c5ffff35)}
+.studio-trial .studio-ip img{filter:brightness(.065) saturate(0)}
+.studio-guides{position:absolute;inset:0;width:100%;height:100%;color:rgba(255,255,255,.38);pointer-events:none;z-index:1}
+@media(max-width:760px){.studio-trial{min-height:680px;padding:42px 28px}.studio-card-copy{width:100%}.studio-trial .studio-girl{width:76%;height:51%;right:-12%;bottom:-9%}.studio-trial .studio-ip{width:34%;right:37%;bottom:-2%}.studio-trial .studio-watermark{width:90%;right:14%;bottom:-2%;opacity:.07}.studio-guides{opacity:.55}.studio-trial .studio-start{margin-top:2px}}
+/* Raise the illustration group while preserving its layered composition. */
+.studio-trial .studio-girl{bottom:-12%}
+.studio-trial .studio-ip{bottom:4%}
+.studio-trial .studio-watermark{bottom:-6%}
+@media(max-width:760px){.studio-trial .studio-girl{bottom:-5%}.studio-trial .studio-ip{bottom:2%}.studio-trial .studio-watermark{bottom:2%}}
+
+.studio-trial .studio-ip img{filter:brightness(.94) saturate(.85)}.studio-trial .studio-girl{filter:brightness(.96) saturate(.85) drop-shadow(-2px -2px 3px #c5ffff40)}
+
+/* Lift the wordmark independently of the characters. */
+.studio-trial .studio-watermark{bottom:8%}
+@media(max-width:760px){.studio-trial .studio-watermark{bottom:13%}}

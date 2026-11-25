@@ -1,0 +1,29 @@
+
+.community-join{width:min(1100px,88%);margin:0 auto;padding:80px 0 96px;scroll-margin-top:90px}
+.community-join h2{font-size:clamp(28px,3vw,40px);margin:0 0 32px;color:#252525}
+.community-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.community-card{padding:28px;border-radius:24px;background:rgba(236,242,242,.6);display:flex;flex-direction:column;align-items:flex-start;color:#222222;min-width:0}
+.community-card h3{font:600 18px/1.4 inherit;margin:0 0 12px;font-size:18px}
+.community-card p{font-size:15px;line-height:1.8;color:#656565;margin:0 0 22px;max-width:28em}
+.community-qr{display:block;position:relative;width:176px;max-width:100%;aspect-ratio:1;margin:auto auto 12px;overflow:hidden;border-radius:18px;background:#fff;box-shadow:0 1px 3px #24242416}
+.community-qr img{position:absolute;max-width:none;height:auto;display:block}
+.wechat-qr img{width:121.6216%;left:-10.8108%;top:-5.4054%}
+.feishu-qr img{width:215.7233%;left:-58.1761%;top:-77.044%}
+.community-card small{align-self:center;font-size:12px;color:#727272}
+.community-chat-icon{width:44px;height:44px;padding:10px;box-sizing:border-box;border:1px solid #dde3e4;background:white;border-radius:14px;margin-bottom:18px}
+.discord-join{display:block;box-sizing:border-box;text-align:center;width:100%;padding:13px 16px;margin-top:auto;background:#151719;color:white;border-radius:13px;text-decoration:none;font-size:15px;font-weight:600}
+.community-join a:focus-visible{outline:2px solid #737373;outline-offset:5px}
+@media(hover:hover){.discord-join:hover{background:#303638}}
+@media(max-width:700px){.community-cards{grid-template-columns:1fr;gap:16px}.community-join{padding:56px 0}.community-card{padding:26px}.community-qr{width:200px}.discord-join{margin-top:18px}}
+
+.footer-social{display:flex;align-items:center;gap:12px;margin-top:24px;flex-wrap:wrap}
+.footer-social a{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;transition:background .18s ease}
+.end .signature .footer-social img{display:block;width:21px;height:21px;max-width:none;margin:0;filter:none;opacity:1}
+.footer-social a:hover{background:#ffffff12}
+.footer-social a:focus-visible{outline:2px solid #76dee7;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.footer-social a{transition:none}}
+
+.end .signature .footer-social{justify-content:flex-start;gap:12px;width:max-content;max-width:100%}
+@media(max-width:700px){.community-join{padding:64px 0 72px;max-width:480px}.community-join h2{margin-bottom:28px}.community-cards{gap:24px}.community-card{padding:28px 24px}.community-card h3{line-height:1.5;margin-bottom:14px}.community-card p{line-height:1.85;margin-bottom:26px}.community-qr{width:min(200px,100%);flex-shrink:0;margin-bottom:16px}.community-card small{line-height:1.6}.discord-join{min-height:48px;display:grid;place-items:center}.community-chat-icon{margin-bottom:22px}}
+
+.community-join>h2{text-align:center;margin-bottom:16px}.community-intro{text-align:center;color:#6e6e6e;font-size:17px;line-height:1.8;margin:0 auto 40px;max-width:34em}.community-join .community-cards{text-align:left}@media(max-width:700px){.community-intro{font-size:15px;line-height:1.9;margin-bottom:32px;max-width:20em}.community-join>h2{margin-bottom:14px}}
