@@ -7,6 +7,7 @@ async function walk(dir){for(const entry of await readdir(dir,{withFileTypes:tru
 if(file.endsWith('.html')){
  text=text.replace(/<base\b[^>]*>/gi,'');
  text=text.replace(/(<head\b[^>]*>)/i,`$1<base href="${base}">`);
+ if (/^(?:en\/)?(?:index|community|sparks)\.html$/.test(path.relative('dist',file))) text=text.replace(/(<base\b[^>]*>)/i,`$1<script src="${base}language-preference.js?v=1"></script>`);
  if(!/<base /i.test(text))text=text.replace(/(<html[^>]*>)/i,`$1<base href="${base}">`);
 }
 // Root-relative local URLs in markup, CSS and dynamic JavaScript assets.
